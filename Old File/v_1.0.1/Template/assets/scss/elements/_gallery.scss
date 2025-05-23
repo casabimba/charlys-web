@@ -1,0 +1,45 @@
+
+/*---==================
+    02. Elements  
+    
+        # 11 Gallery CSS
+=================----*/
+
+.gallery-item{
+    &:hover{
+        & .gallery-img{
+            & .hover-content{
+                visibility: visible;
+                opacity: 1;
+                & .insta-icon{
+                    @include transform(translateY(0)); 
+                }
+            }
+        }
+    }
+    & .gallery-img{
+        position: relative;
+        overflow: hidden;
+        & img{
+            width: 100%;
+        }
+        & .hover-content{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            @extend %flex-center;
+            visibility: hidden;
+            opacity: 0;
+            @include transition(.35s);
+            & .insta-icon{
+                font-size: 30px;
+                @extend %white-color;
+                @include transform(translateY(-50px));
+                @include transition(.35s);
+            }
+        }
+    }
+}

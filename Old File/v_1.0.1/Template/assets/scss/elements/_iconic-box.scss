@@ -1,0 +1,137 @@
+
+/*---==================
+    02. Elements  
+    
+        # 04 IConic BOx CSS
+=================----*/
+
+.iconic-box{
+    &.style-one{
+        max-width: 200px;
+        & .icon{
+            width: 70px;
+            height: 70px;
+            @extend %flex-center;
+            border-radius: 50%;
+            background-color: rgba(0, 131, 62, 0.10);
+        }
+        & .content{
+            padding-top: 20px;
+            & h5{
+                font-family: $body-font;
+                line-height: 30px;
+            }
+        }
+    }
+    &.style-two{
+        max-width: 300px;
+        & .icon{
+            margin-bottom: 20px;
+        }
+        & .content{
+            & h5{
+                @extend %white-color;
+                font: 400 18px $body-font;
+            }
+        }
+    }
+    &.style-three{
+        max-width: 200px;
+        & .icon{
+            width: 60px;
+            height: 60px;
+            @extend %flex-center;
+            border-radius: 50%;
+            @extend %secondary-bg;
+            margin-bottom: 10px;
+        }
+        & .content{
+            & h5{
+                font: 500 18px $body-font;
+            }
+        }
+        
+    }
+}
+
+.iconic-info-box{
+    &.style-one{
+        padding: 40px 50px;
+        border-radius: 16px;
+        background-color: #FFF;
+        box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.08);
+        & .icon{
+            width: 80px;
+            height: 80px;
+            @include border-radius(50%);
+            background-color: #FCF3F3;
+            @extend %flex-center;
+            @extend %primary-color;
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: inline-flex;
+        }
+        & .content{
+            & h4{
+                margin-bottom: 10px;
+            }
+            & p{
+                font-weight: 500;
+                &:hover{
+                    & a{
+                        @extend %primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.special-off-item{
+    position: relative;
+    overflow: hidden;
+    @extend %white-bg;
+    padding: 40px 30px;
+    @include border-radius(20px);
+    transition: all .3s;
+    &:hover{
+        @extend %secondary-bg;
+        & .item-title{
+            & h4{
+                @extend %white-color;
+            }
+        }
+        & .content {
+            & p{
+                @extend %white-color;
+            }
+        }
+    }
+    & .sp-shape{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 100%;
+        & img{
+            width: 100%;
+        }
+    }
+    & .item-title{
+        margin-bottom: 20px;
+    }
+    & .image{
+        margin-bottom: 20px;
+        & img{
+            min-height: 285px;
+            max-height: 285px;
+            margin: 0 auto;
+        }
+    }
+    & .content{
+        & p{
+            font: 500 16px $body-font;
+            @extend %heading-color;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+
+/*---==================
+    02. Elements  
+    
+        # 09 Team CSS
+=================----*/
+
+.team-item{
+    &.style-one{
+        &:hover{
+            & .member-image{
+                
+                & ul.social-link{
+                    bottom: 0;
+                }
+            }
+        }
+        & .member-image{
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            & ul.social-link{
+                position: absolute;
+                bottom: -55%;
+                left: 0;
+                padding: 10px;
+                @extend %primary-bg;
+                @include transition(.3s);
+                & li{
+                    display: block;
+                    &:not(:last-child){
+                        margin-bottom: 10px;
+                    }
+                    & a{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        @extend %flex-center;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        @extend %white-color;
+                    }
+                }
+            }
+        }
+        & .member-info{
+            & span.position{
+                font-size: 18px;
+                font-weight: 500;
+                color: rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
+    &.style-two{
+        & .member-info{
+            @extend %primary-bg;
+            text-align: center;
+            padding: 20px 40px 25px;
+            & h4{
+                @extend %white-color;
+                margin-bottom: 5px;
+            }
+            & span.position{
+                @extend %white-color;
+                font: 500 18px $body-font;
+                margin-bottom: 20px;
+                text-transform: capitalize;
+            }
+            & ul.social-link{
+                & li{
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    & a{
+                        @extend %white-color;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        &:hover{
+                            @extend %white-bg;
+                            @extend %primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
